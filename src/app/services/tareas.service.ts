@@ -31,7 +31,7 @@ export class TareasService {
 //actualizar tarea
 actualizarTarea(id:number, tarea:any){
 // Usamos put para actualizar datos existentes
-  return this.http.put(`http://localhost:8000/tareas/${id}`, tarea);
+  return this.http.put(`${this.apiUrl}${id}/`, tarea);
 
 }
 }
