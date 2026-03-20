@@ -1,16 +1,16 @@
 import { Injectable, inject} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TareasService {
 
-  // 1. Traemos la herramienta para hacer peticiones web
-  private http = inject(HttpClient)
+
   // 2. Guardamos la dirección de tu API de FastAPI en una variable
-  private apiUrl = 'http://localhost:8000/tareas/';
-  constructor() { }
+  private apiUrl = environment.apiUrl
+  constructor(private http: HttpClient) { }
 
   //metodos
   //obtener
